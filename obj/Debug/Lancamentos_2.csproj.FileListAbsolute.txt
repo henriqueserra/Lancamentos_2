@@ -1,0 +1,9 @@
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\bin\Debug\Lancamentos_2.exe.config
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\bin\Debug\Lancamentos_2.exe
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\bin\Debug\Lancamentos_2.pdb
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.csprojAssemblyReference.cache
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.Form1.resources
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.Properties.Resources.resources
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.csproj.GenerateResource.cache
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.exe
+C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.pdb
