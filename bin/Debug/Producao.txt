@@ -1,0 +1,15 @@
+Use Taboao
+if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '2019-12-05 21:12:01')=0 
+Begin
+insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('BOLO ALPINO', -1, 'UBER', '2019-12-05 21:12:01', 'Juliana')
+End
+Use Taboao
+if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '2019-12-05 21:12:10')=0 
+Begin
+insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('BOLO BEM CASADO PEQUENO', -1, 'FATIA', '2019-12-05 21:12:10', 'Bruna')
+End
+Use Taboao
+if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '2019-12-05 21:12:18')=0 
+Begin
+insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('BOLO DE ABACAXI COM COCO E RECHEIO DE BEIJINHO PEQUENO', -10, 'PERDA', '2019-12-05 21:12:18', 'Joyce')
+End

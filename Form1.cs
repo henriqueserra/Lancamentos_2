@@ -248,7 +248,7 @@ namespace Lancamentos_2
                     {
                     using (StreamWriter sw = File.AppendText("Producao.txt"))
                         {
-                        sw.WriteLine(@"-- ****");
+                        sw.WriteLine(@"Use Taboao");
                         sw.WriteLine("if(select count(funcionario) from dbo.Producao where data = '"+teste1+"')=0 ");
                         sw.WriteLine("Begin");
                         sw.WriteLine("insert Taboao.dbo.Producao(Vendavel, Qtd, Data, Funcionario) VALUES('"+vendavel+"', "+grande+", '"+teste1+"', '"+colaboradora+"')");
@@ -265,7 +265,7 @@ namespace Lancamentos_2
                     {
                     using (StreamWriter sw = File.AppendText("Producao.txt"))
                         {
-                        sw.WriteLine(@"-- ****");
+                        sw.WriteLine(@"Use Taboao");
                         sw.WriteLine("if(select count(funcionario) from dbo.Producao where data = '"+teste1+"')=0 ");
                         sw.WriteLine("Begin");
                         sw.WriteLine("insert Taboao.dbo.Producao(Vendavel, Qtd, Data, Funcionario) VALUES('"+vendavel+"', "+grande+", '"+teste1+"', '"+colaboradora+"')");
@@ -289,6 +289,7 @@ namespace Lancamentos_2
         private void button_uber_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
+            string colaboradora = this.listColaboradoras.SelectedItem.ToString();
             string teste = data.ToString("yyyy-MM-dd HH:mm:ss");
             string vendavel = this.list_Ubereats.SelectedItem.ToString();
             string qtd = this.tb_uber_qtd.Text;
@@ -302,10 +303,10 @@ namespace Lancamentos_2
                 {
                 using (StreamWriter sw = File.AppendText("Producao.txt"))
                     {
-                    sw.WriteLine(@"-- ****");
+                    sw.WriteLine(@"Use Taboao");
                     sw.WriteLine("if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '"+teste+"')=0 ");
                     sw.WriteLine("Begin");
-                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data) VALUES('"+vendavel+"', -"+qtd+", 'UBER', '"+teste+"')");
+                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+"', -"+qtd+", 'UBER', '"+teste+"', '"+colaboradora+"')");
                     sw.WriteLine("End");
                     sw.Close();
                     }
@@ -328,6 +329,7 @@ namespace Lancamentos_2
         private void button_Fatia_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
+            string colaboradora = this.listColaboradoras.SelectedItem.ToString();
             string teste = data.ToString("yyyy-MM-dd HH:mm:ss");
             string vendavel = this.list_Fatia.SelectedItem.ToString();
             string qtd = "1";
@@ -341,10 +343,10 @@ namespace Lancamentos_2
                 {
                 using (StreamWriter sw = File.AppendText("Producao.txt"))
                     {
-                    sw.WriteLine(@"-- ****");
+                    sw.WriteLine(@"Use Taboao");
                     sw.WriteLine("if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '"+teste+"')=0 ");
                     sw.WriteLine("Begin");
-                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data) VALUES('"+vendavel+"', -1, 'FATIA', '"+teste+"')");
+                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+"', -1, 'FATIA', '"+teste+"', '"+colaboradora+"')");
                     sw.WriteLine("End");
                     sw.Close();
                     }
@@ -359,6 +361,7 @@ namespace Lancamentos_2
         private void botao_Perdas_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
+            string colaboradora = this.listColaboradoras.SelectedItem.ToString();
             string teste = data.ToString("yyyy-MM-dd HH:mm:ss");
             string vendavel = this.list_Perdas.SelectedItem.ToString();
             string qtd = this.tb_Perdas_Qtd.Text;
@@ -372,10 +375,10 @@ namespace Lancamentos_2
                 {
                 using (StreamWriter sw = File.AppendText("Producao.txt"))
                     {
-                    sw.WriteLine(@"-- ****");
+                    sw.WriteLine(@"Use Taboao");
                     sw.WriteLine("if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '"+teste+"')=0 ");
                     sw.WriteLine("Begin");
-                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data) VALUES('"+vendavel+"', -"+qtd+", 'PERDA', '"+teste+"')");
+                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+"', -"+qtd+", 'PERDA', '"+teste+"', '"+colaboradora+"')");
                     sw.WriteLine("End");
                     sw.Close();
                     }
