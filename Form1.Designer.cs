@@ -62,22 +62,34 @@
             this.label12 = new System.Windows.Forms.Label();
             this.list_Perdas = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.listColaboradoras = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.botao_fidelidade = new System.Windows.Forms.Button();
             this.tb_fidelidade_selecionado = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.list_Fidelidade = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.listColaboradoras = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.botao_bolo_utilizado = new System.Windows.Forms.Button();
+            this.tb_bolo_utilizado_pequeno = new System.Windows.Forms.TextBox();
+            this.tb_bolo_utilizado_grande = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.list_bolo_utilizado = new System.Windows.Forms.ListBox();
+            this.label21 = new System.Windows.Forms.Label();
             this.tabFormulario.SuspendLayout();
             this.tabProducao.SuspendLayout();
             this.tab_Uber.SuspendLayout();
             this.tabFatia.SuspendLayout();
             this.tabPerdas.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabFormulario
@@ -88,6 +100,7 @@
             this.tabFormulario.Controls.Add(this.tabFatia);
             this.tabFormulario.Controls.Add(this.tabPerdas);
             this.tabFormulario.Controls.Add(this.tabPage1);
+            this.tabFormulario.Controls.Add(this.tabPage2);
             this.tabFormulario.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulario.Location = new System.Drawing.Point(0, 129);
             this.tabFormulario.Name = "tabFormulario";
@@ -97,6 +110,7 @@
             // 
             // tabProducao
             // 
+            this.tabProducao.Controls.Add(this.label16);
             this.tabProducao.Controls.Add(this.label3);
             this.tabProducao.Controls.Add(this.label_Producao_Vendavel);
             this.tabProducao.Controls.Add(this.btn_Producao_ok);
@@ -138,7 +152,7 @@
             // btn_Producao_ok
             // 
             this.btn_Producao_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Producao_ok.Location = new System.Drawing.Point(574, 190);
+            this.btn_Producao_ok.Location = new System.Drawing.Point(593, 190);
             this.btn_Producao_ok.Name = "btn_Producao_ok";
             this.btn_Producao_ok.Size = new System.Drawing.Size(75, 23);
             this.btn_Producao_ok.TabIndex = 9;
@@ -432,38 +446,6 @@
             this.label13.TabIndex = 10;
             this.label13.Text = "Cadastramento de Bolos Vencidos, Queimados, Quebrados, Fidelidade ou Etc.";
             // 
-            // listColaboradoras
-            // 
-            this.listColaboradoras.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listColaboradoras.FormattingEnabled = true;
-            this.listColaboradoras.ItemHeight = 16;
-            this.listColaboradoras.Location = new System.Drawing.Point(12, 28);
-            this.listColaboradoras.Name = "listColaboradoras";
-            this.listColaboradoras.Size = new System.Drawing.Size(125, 84);
-            this.listColaboradoras.TabIndex = 0;
-            this.listColaboradoras.SelectedIndexChanged += new System.EventHandler(this.listColaboradoras_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Colaboradora";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(181, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(677, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.botao_fidelidade);
@@ -527,6 +509,161 @@
             this.label15.TabIndex = 17;
             this.label15.Text = "Cadastramento de Bolos entregues por conta de cartão fidelidade";
             // 
+            // listColaboradoras
+            // 
+            this.listColaboradoras.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listColaboradoras.FormattingEnabled = true;
+            this.listColaboradoras.ItemHeight = 16;
+            this.listColaboradoras.Location = new System.Drawing.Point(12, 28);
+            this.listColaboradoras.Name = "listColaboradoras";
+            this.listColaboradoras.Size = new System.Drawing.Size(125, 84);
+            this.listColaboradoras.TabIndex = 0;
+            this.listColaboradoras.SelectedIndexChanged += new System.EventHandler(this.listColaboradoras_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Colaboradora";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(181, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(677, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label16.Location = new System.Drawing.Point(406, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(448, 90);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Ao registrar produtos como: \r\nBolo de Pote, Bolo Recheado, Bolo Mousse ou Bolo de" +
+    " Festa\r\n\r\nNão esqueça de registrar o bolo base na aba\r\n\"Bolo utilizado\"";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.label18);
+            this.tabPage2.Controls.Add(this.botao_bolo_utilizado);
+            this.tabPage2.Controls.Add(this.tb_bolo_utilizado_pequeno);
+            this.tabPage2.Controls.Add(this.tb_bolo_utilizado_grande);
+            this.tabPage2.Controls.Add(this.label19);
+            this.tabPage2.Controls.Add(this.label20);
+            this.tabPage2.Controls.Add(this.list_bolo_utilizado);
+            this.tabPage2.Controls.Add(this.label21);
+            this.tabPage2.Location = new System.Drawing.Point(4, 35);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(867, 339);
+            this.tabPage2.TabIndex = 5;
+            this.tabPage2.Text = "Bolo Utiizado";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(512, 166);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(120, 19);
+            this.label17.TabIndex = 21;
+            this.label17.Text = "Produzido por: ";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(512, 68);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(146, 19);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "Quatidade Utilizada";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // botao_bolo_utilizado
+            // 
+            this.botao_bolo_utilizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.botao_bolo_utilizado.Location = new System.Drawing.Point(699, 203);
+            this.botao_bolo_utilizado.Name = "botao_bolo_utilizado";
+            this.botao_bolo_utilizado.Size = new System.Drawing.Size(75, 23);
+            this.botao_bolo_utilizado.TabIndex = 19;
+            this.botao_bolo_utilizado.Text = "Registra";
+            this.botao_bolo_utilizado.UseVisualStyleBackColor = true;
+            this.botao_bolo_utilizado.Click += new System.EventHandler(this.botao_bolo_utilizado_Click);
+            // 
+            // tb_bolo_utilizado_pequeno
+            // 
+            this.tb_bolo_utilizado_pequeno.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_bolo_utilizado_pequeno.Location = new System.Drawing.Point(592, 129);
+            this.tb_bolo_utilizado_pequeno.Name = "tb_bolo_utilizado_pequeno";
+            this.tb_bolo_utilizado_pequeno.Size = new System.Drawing.Size(100, 22);
+            this.tb_bolo_utilizado_pequeno.TabIndex = 18;
+            // 
+            // tb_bolo_utilizado_grande
+            // 
+            this.tb_bolo_utilizado_grande.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_bolo_utilizado_grande.Location = new System.Drawing.Point(592, 102);
+            this.tb_bolo_utilizado_grande.Name = "tb_bolo_utilizado_grande";
+            this.tb_bolo_utilizado_grande.Size = new System.Drawing.Size(100, 22);
+            this.tb_bolo_utilizado_grande.TabIndex = 17;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(512, 131);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(70, 19);
+            this.label19.TabIndex = 16;
+            this.label19.Text = "Pequeno";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(512, 102);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(60, 19);
+            this.label20.TabIndex = 15;
+            this.label20.Text = "Grande";
+            // 
+            // list_bolo_utilizado
+            // 
+            this.list_bolo_utilizado.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.list_bolo_utilizado.FormattingEnabled = true;
+            this.list_bolo_utilizado.Location = new System.Drawing.Point(65, 68);
+            this.list_bolo_utilizado.Name = "list_bolo_utilizado";
+            this.list_bolo_utilizado.Size = new System.Drawing.Size(371, 264);
+            this.list_bolo_utilizado.TabIndex = 14;
+            this.list_bolo_utilizado.SelectedIndexChanged += new System.EventHandler(this.list_bolo_utilizado_SelectedIndexChanged);
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(8, 8);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(554, 46);
+            this.label21.TabIndex = 13;
+            this.label21.Text = "Cadastramento de Bolo utilizado na fabricação de\r\nBolo de Pote, Bolo Recheado, Bo" +
+    "lo Mousse ou Bolo Festa";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -550,9 +687,11 @@
             this.tabFatia.PerformLayout();
             this.tabPerdas.ResumeLayout(false);
             this.tabPerdas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,6 +740,17 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListBox list_Fidelidade;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button botao_bolo_utilizado;
+        private System.Windows.Forms.TextBox tb_bolo_utilizado_pequeno;
+        private System.Windows.Forms.TextBox tb_bolo_utilizado_grande;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ListBox list_bolo_utilizado;
+        private System.Windows.Forms.Label label21;
         }
     }
 

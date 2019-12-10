@@ -26,6 +26,7 @@ namespace Lancamentos_2
             Carrega_Fatiar();
             Carrega_Perdas();
             Carrega_Fidelidade();
+            Carrega_Bolo_Utilizado();
             }
         private void Carrega_Colaboradora()
             {
@@ -35,6 +36,7 @@ namespace Lancamentos_2
             this.listColaboradoras.Items.Add("Bruna");
             this.listColaboradoras.Items.Add("Joyce");
             this.listColaboradoras.Items.Add("Regiane");
+            this.listColaboradoras.Items.Add("Henrique");
 
             //Carrega_Colaboradora dados dos Vendáveis
 
@@ -429,6 +431,90 @@ namespace Lancamentos_2
         private void list_Fidelidade_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_fidelidade_selecionado.Text=list_Fidelidade.SelectedItem.ToString();
+            }
+        private void Carrega_Bolo_Utilizado()
+            {
+            list_bolo_utilizado.Items.Clear();
+            string[] linhas = System.IO.File.ReadAllLines("Bolos_Utilizados.txt");
+            foreach (var linha in linhas)
+                {
+                list_bolo_utilizado.Items.Add(linha);
+                }
+            list_bolo_utilizado.SelectedIndex=0;
+            }
+
+        private void botao_bolo_utilizado_Click(object sender, EventArgs e)
+            {
+            string colaboradora = this.listColaboradoras.SelectedItem.ToString();
+            string vendavel = this.list_bolo_utilizado.SelectedItem.ToString();
+            bool ehpote = false;
+            if (vendavel.Contains("POTE"))
+                {
+                ehpote=true;
+                }
+            string grande = tb_bolo_utilizado_grande.Text;
+            string pequeno = tb_bolo_utilizado_pequeno.Text;
+            if (grande=="")
+                {
+                grande="0";
+                }
+            if (pequeno=="")
+                {
+                pequeno="0";
+                }
+            DateTime data = DateTime.Now;
+            string teste1 = data.ToString("yyyy-MM-dd HH:mm:ss");
+            TimeSpan duracao = new TimeSpan(0, 0, 0, 1);
+            data=data.Add(duracao);
+            string teste2 = data.ToString("yyyy-MM-dd HH:mm:ss");
+            string mensagem = "Confirma a utilizacao de: "+vendavel+" grande = "+grande+" e pequeno = "+pequeno+", produzido pela "+colaboradora;
+            if (ehpote)
+                {
+                mensagem="Confirma a Utilizacao de: "+vendavel+" quantidade = "+grande+" , produzido pela "+colaboradora;
+                }
+            string titulo = "Inclusão de Utilização na fabricação de produtos";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result=MessageBox.Show(mensagem, titulo, buttons);
+            if (result==System.Windows.Forms.DialogResult.Yes)
+                {
+                if (!ehpote)
+                    {
+                    using (StreamWriter sw = File.AppendText("Producao.txt"))
+                        {
+                        sw.WriteLine(@"Use Taboao");
+                        sw.WriteLine("if(select count(funcionario) from Taboao.dbo.Ajuste_Vendaveis where data = '"+teste1+"')=0 ");
+                        sw.WriteLine("Begin");
+                        sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+"', -"+grande+", 'FABRICACAO', '"+teste1+"', '"+colaboradora+"')");
+                        sw.WriteLine("End");
+                        sw.WriteLine("if(select count(funcionario) from Taboao.dbo.Ajuste_Vendaveis where data = '"+teste2+"')=0 ");
+                        sw.WriteLine("Begin");
+                        sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+" PEQUENO', -"+pequeno+", 'FABRICACAO', '"+teste2+"', '"+colaboradora+"')");
+                        sw.WriteLine("End");
+                        sw.Close();
+                        }
+                    }
+                }
+            tb_bolo_utilizado_grande.Text="";
+            tb_bolo_utilizado_pequeno.Text="";
+            this.list_bolo_utilizado.SelectedIndex=0;
+            MessageBox.Show("Registrado com sucesso!", "Registro", MessageBoxButtons.OK);
+            }
+
+        private void list_bolo_utilizado_SelectedIndexChanged(object sender, EventArgs e)
+            {
+            if (list_bolo_utilizado.SelectedIndex == 0)
+                {
+                tb_bolo_utilizado_grande.Visible=false;
+                tb_bolo_utilizado_pequeno.Visible=false;
+                botao_bolo_utilizado.Visible=false;
+                }
+            else
+                {
+                tb_bolo_utilizado_grande.Visible=true;
+                tb_bolo_utilizado_pequeno.Visible=true;
+                botao_bolo_utilizado.Visible=true;
+                }
             }
         }
     }

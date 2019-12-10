@@ -7,3 +7,12 @@ C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos
 C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.csproj.GenerateResource.cache
 C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.exe
 C:\Users\Henrique\Source\Repos\henriqueserra\Lancamentos_2\obj\Debug\Lancamentos_2.pdb
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\Lancamentos_2.exe.config
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\Lancamentos_2.exe
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\Lancamentos_2.pdb
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.csprojAssemblyReference.cache
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.Form1.resources
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.Properties.Resources.resources
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.csproj.GenerateResource.cache
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.exe
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.pdb
