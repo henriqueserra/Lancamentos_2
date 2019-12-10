@@ -25,6 +25,7 @@ namespace Lancamentos_2
             Carrega_Ubereats();
             Carrega_Fatiar();
             Carrega_Perdas();
+            Carrega_Fidelidade();
             }
         private void Carrega_Colaboradora()
             {
@@ -173,6 +174,15 @@ namespace Lancamentos_2
             foreach (var linha in linhas)
                 {
                 list_Perdas.Items.Add(linha);
+                }
+            }
+        private void Carrega_Fidelidade()
+            {
+            list_Fidelidade.Items.Clear();
+            string[] linhas = System.IO.File.ReadAllLines("Fidelidade.txt");
+            foreach (var linha in linhas)
+                {
+                list_Fidelidade.Items.Add(linha);
                 }
             }
         private void listColaboradoras_SelectedIndexChanged(object sender, EventArgs e)
@@ -386,6 +396,39 @@ namespace Lancamentos_2
                 tb_Perdas_Selecionado.Text="";
                 this.list_Perdas.SelectedIndex=0;
                 }
+            }
+
+        private void botao_fidelidade_Click(object sender, EventArgs e)
+            {
+            DateTime data = DateTime.Now;
+            string colaboradora = this.listColaboradoras.SelectedItem.ToString();
+            string teste = data.ToString("yyyy-MM-dd HH:mm:ss");
+            string vendavel = this.list_Fidelidade.SelectedItem.ToString();
+            string qtd = "1";
+            string mensagem = vendavel;
+            string titulo = "Inclusão de Bolo entregue por catão Fidelidade";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+            result=MessageBox.Show(mensagem, titulo, buttons);
+            if (result==System.Windows.Forms.DialogResult.Yes)
+                {
+                using (StreamWriter sw = File.AppendText("Producao.txt"))
+                    {
+                    sw.WriteLine(@"Use Taboao");
+                    sw.WriteLine("if(select count(Vendavel) from dbo.Ajuste_Vendaveis where data = '"+teste+"')=0 ");
+                    sw.WriteLine("Begin");
+                    sw.WriteLine("insert Taboao.dbo.Ajuste_Vendaveis(Vendavel, Qtd, Motivo, Data, Funcionario) VALUES('"+vendavel+"', -1, 'Fidelidade', '"+teste+"', '"+colaboradora+"')");
+                    sw.WriteLine("End");
+                    sw.Close();
+                    }
+                tb_Fatia.Text="";
+                this.list_Fatia.SelectedIndex=0;
+                }
+            }
+
+        private void list_Fidelidade_SelectedIndexChanged(object sender, EventArgs e)
+            {
+            tb_fidelidade_selecionado.Text=list_Fidelidade.SelectedItem.ToString();
             }
         }
     }
