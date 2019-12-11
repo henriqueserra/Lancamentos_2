@@ -148,9 +148,7 @@ namespace Lancamentos_2
             this.listVendaveis_Producao.Items.Add("CUCA DE ABACAXI");
             this.listVendaveis_Producao.Items.Add("CUCA DE BANANA");
             this.listVendaveis_Producao.Items.Add("CUCA DE MACA");
-
-
-            }
+                                   }
         private void Carrega_Ubereats()
             {
             list_Ubereats.Items.Clear();
@@ -399,7 +397,6 @@ namespace Lancamentos_2
                 this.list_Perdas.SelectedIndex=0;
                 }
             }
-
         private void botao_fidelidade_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -427,7 +424,6 @@ namespace Lancamentos_2
                 this.list_Fatia.SelectedIndex=0;
                 }
             }
-
         private void list_Fidelidade_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_fidelidade_selecionado.Text=list_Fidelidade.SelectedItem.ToString();
@@ -442,7 +438,6 @@ namespace Lancamentos_2
                 }
             list_bolo_utilizado.SelectedIndex=0;
             }
-
         private void botao_bolo_utilizado_Click(object sender, EventArgs e)
             {
             string colaboradora = this.listColaboradoras.SelectedItem.ToString();
@@ -500,7 +495,6 @@ namespace Lancamentos_2
             this.list_bolo_utilizado.SelectedIndex=0;
             MessageBox.Show("Registrado com sucesso!", "Registro", MessageBoxButtons.OK);
             }
-
         private void list_bolo_utilizado_SelectedIndexChanged(object sender, EventArgs e)
             {
             if (list_bolo_utilizado.SelectedIndex==0)
@@ -516,10 +510,12 @@ namespace Lancamentos_2
                 botao_bolo_utilizado.Visible=true;
                 }
             }
-
         private void botao_sorteio_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
+            if (tb_quantidade_de_cupons.Text.Length==0) { tb_quantidade_de_cupons.Text="1"; }
+            int quantidade = Convert.ToInt32(tb_quantidade_de_cupons.Text);
+            if (quantidade<1) { quantidade=1; }
             string teste1 = data.ToString("yyyy-MM-dd HH:mm:ss");
             string nome = tb_nome_completo.Text.ToUpper();
             string telefone = tb_telefone_celular.Text;
@@ -537,20 +533,21 @@ namespace Lancamentos_2
             DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de cadastro de clientes", MessageBoxButtons.YesNo);
             if (resultado==System.Windows.Forms.DialogResult.Yes)
                 {
-                using (StreamWriter sw = File.AppendText("Producao.txt"))
+                for (int i = 0; i<quantidade; i++)
                     {
-                    sw.WriteLine(@"Use Taboao");
-                    sw.WriteLine("if(select count(funcionario) from Taboao.dbo.Ajuste_Vendaveis where data = '"+teste1+"')=0 ");
-                    sw.WriteLine("Begin");
-                    sw.WriteLine("insert Taboao.dbo.Clientes(Cliente, email, Telefone, Data, Funcionario) VALUES('"+nome+"', '"+email+"', '"+telefone+"', '"+teste1+"', '"+funcionario+"')");
-                    sw.WriteLine("End");
-                    sw.Close();
+                    using (StreamWriter sw = File.AppendText("Producao.txt"))
+                        {
+                        sw.WriteLine(@"Use Taboao");
+                        sw.WriteLine("insert Taboao.dbo.Clientes(Cliente, email, Telefone, Data, Funcionario) VALUES('"+nome+"', '"+email+"', '"+telefone+"', '"+teste1+"', '"+funcionario+"')");
+                        sw.Close();
+                        }
                     }
                 MessageBox.Show("Cliente cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK);
                 }
             tb_nome_completo.Text="";
             tb_telefone_celular.Text="";
             tb_email_cliente.Text="";
+            tb_quantidade_de_cupons.Text="1";
             }
         }
     }

@@ -92,6 +92,8 @@
             this.listColaboradoras = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label27 = new System.Windows.Forms.Label();
+            this.tb_quantidade_de_cupons = new System.Windows.Forms.TextBox();
             this.tabFormulario.SuspendLayout();
             this.tabProducao.SuspendLayout();
             this.tab_Uber.SuspendLayout();
@@ -648,7 +650,9 @@
             // 
             this.tabPage3.Controls.Add(this.botao_sorteio);
             this.tabPage3.Controls.Add(this.label26);
+            this.tabPage3.Controls.Add(this.tb_quantidade_de_cupons);
             this.tabPage3.Controls.Add(this.tb_email_cliente);
+            this.tabPage3.Controls.Add(this.label27);
             this.tabPage3.Controls.Add(this.label25);
             this.tabPage3.Controls.Add(this.tb_telefone_celular);
             this.tabPage3.Controls.Add(this.label24);
@@ -678,7 +682,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Red;
-            this.label26.Location = new System.Drawing.Point(192, 193);
+            this.label26.Location = new System.Drawing.Point(477, 210);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(495, 76);
             this.label26.TabIndex = 7;
@@ -774,6 +778,23 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(11, 210);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(223, 23);
+            this.label27.TabIndex = 5;
+            this.label27.Text = "Quantidade de cupons";
+            // 
+            // tb_quantidade_de_cupons
+            // 
+            this.tb_quantidade_de_cupons.Location = new System.Drawing.Point(240, 207);
+            this.tb_quantidade_de_cupons.Name = "tb_quantidade_de_cupons";
+            this.tb_quantidade_de_cupons.Size = new System.Drawing.Size(43, 30);
+            this.tb_quantidade_de_cupons.TabIndex = 6;
+            this.tb_quantidade_de_cupons.Text = "1";
             // 
             // Form1
             // 
@@ -874,6 +895,8 @@
         private System.Windows.Forms.TextBox tb_email_cliente;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TextBox tb_telefone_celular;
+        private System.Windows.Forms.TextBox tb_quantidade_de_cupons;
+        private System.Windows.Forms.Label label27;
         }
     }
 
