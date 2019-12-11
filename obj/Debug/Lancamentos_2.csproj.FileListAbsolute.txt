@@ -16,3 +16,7 @@ D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.Pr
 D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.csproj.GenerateResource.cache
 D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.exe
 D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.pdb
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\BouncyCastle.dll
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\PushbulletSharp.dll
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\bin\Debug\PushbulletSharp.pdb
+D:\OneDrive\Pessoal\Repositorio_Git_Hub\Lancamentos_2\obj\Debug\Lancamentos_2.csproj.CopyComplete

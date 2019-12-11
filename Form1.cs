@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using PushbulletSharp;
+using PushbulletSharp.Models.Requests;
+using PushbulletSharp.Models.Responses;
 
 namespace Lancamentos_2
     {
@@ -287,6 +290,7 @@ namespace Lancamentos_2
             textProducao_Grande.Text="";
             textProducao_Pequeno.Text="";
             this.listVendaveis_Producao.SelectedIndex=0;
+            Envianotificação("Produção cadastrada");
             }
         private void listVendaveis_Producao_SelectedIndexChanged(object sender, EventArgs e)
             {
@@ -322,6 +326,7 @@ namespace Lancamentos_2
                     }
                 tb_uber_qtd.Text="";
                 tb_uber_selecionado.Text="";
+                Envianotificação(vendavel + " via Uber Eats");
                 }
             }
         private void list_Fatia_Click(object sender, EventArgs e)
@@ -362,6 +367,7 @@ namespace Lancamentos_2
                     }
                 tb_Fatia.Text="";
                 this.list_Fatia.SelectedIndex=0;
+                Envianotificação(vendavel+" colocado para fatiar");
                 }
             }
         private void list_Perdas_SelectedIndexChanged(object sender, EventArgs e)
@@ -395,6 +401,7 @@ namespace Lancamentos_2
                 tb_Perdas_Qtd.Text="";
                 tb_Perdas_Selecionado.Text="";
                 this.list_Perdas.SelectedIndex=0;
+                Envianotificação("Perda registrada");
                 }
             }
         private void botao_fidelidade_Click(object sender, EventArgs e)
@@ -422,6 +429,7 @@ namespace Lancamentos_2
                     }
                 tb_Fatia.Text="";
                 this.list_Fatia.SelectedIndex=0;
+                Envianotificação(vendavel+" Entregue via Fidelidade");
                 }
             }
         private void list_Fidelidade_SelectedIndexChanged(object sender, EventArgs e)
@@ -493,6 +501,7 @@ namespace Lancamentos_2
             tb_bolo_utilizado_grande.Text="";
             tb_bolo_utilizado_pequeno.Text="";
             this.list_bolo_utilizado.SelectedIndex=0;
+            Envianotificação(vendavel+" utilizado");
             MessageBox.Show("Registrado com sucesso!", "Registro", MessageBoxButtons.OK);
             }
         private void list_bolo_utilizado_SelectedIndexChanged(object sender, EventArgs e)
@@ -542,12 +551,27 @@ namespace Lancamentos_2
                         sw.Close();
                         }
                     }
+                Envianotificação("Cliente cadastrado");
                 MessageBox.Show("Cliente cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK);
                 }
             tb_nome_completo.Text="";
             tb_telefone_celular.Text="";
             tb_email_cliente.Text="";
             tb_quantidade_de_cupons.Text="1";
+            }
+        private void Envianotificação(string texto)
+            {
+            PushbulletClient client = new PushbulletClient("o.ijhfmbKRI8JAAAjaorTvs3n1I1oHo4qH");
+            //var devices = client.CurrentUsersDevices();
+            //var device = devices.Devices.Where(o => o.Manufacturer == "Apple").FirstOrDefault();
+            PushNoteRequest request1 = new PushNoteRequest
+                {
+                DeviceIden="ujy7mvFtukmsjE5NB4jvkO",
+                Title=texto,
+                Body=texto
+                };
+
+            PushResponse response1 = client.PushNote(request1);
             }
         }
     }
