@@ -1,0 +1,5 @@
+Use Taboao
+if(select count(funcionario) from Taboao.dbo.Ajuste_Vendaveis where data = '2019-12-11 08:05:54')=0 
+Begin
+insert Taboao.dbo.Clientes(Cliente, email, Telefone, Data, Funcionario) VALUES('VALERIA RIBEIRO SERRA', 'varibeiro09@hotmail.com', '97647-0986', '2019-12-11 08:05:54', 'Henrique')
+End

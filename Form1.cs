@@ -503,7 +503,7 @@ namespace Lancamentos_2
 
         private void list_bolo_utilizado_SelectedIndexChanged(object sender, EventArgs e)
             {
-            if (list_bolo_utilizado.SelectedIndex == 0)
+            if (list_bolo_utilizado.SelectedIndex==0)
                 {
                 tb_bolo_utilizado_grande.Visible=false;
                 tb_bolo_utilizado_pequeno.Visible=false;
@@ -515,6 +515,42 @@ namespace Lancamentos_2
                 tb_bolo_utilizado_pequeno.Visible=true;
                 botao_bolo_utilizado.Visible=true;
                 }
+            }
+
+        private void botao_sorteio_Click(object sender, EventArgs e)
+            {
+            DateTime data = DateTime.Now;
+            string teste1 = data.ToString("yyyy-MM-dd HH:mm:ss");
+            string nome = tb_nome_completo.Text.ToUpper();
+            string telefone = tb_telefone_celular.Text;
+            if (telefone.Length==0)
+                {
+                telefone="não informado";
+                }
+            string email = tb_email_cliente.Text;
+            if (email.Length==0)
+                {
+                email="não informado";
+                }
+            string funcionario = listColaboradoras.SelectedItem.ToString();
+            var mensagem = "Você confirma o cadastramento do cliente "+nome+System.Environment.NewLine+"Telefone: "+telefone+System.Environment.NewLine+"e-mail: "+email;
+            DialogResult resultado = MessageBox.Show(mensagem, "Confirmação de cadastro de clientes", MessageBoxButtons.YesNo);
+            if (resultado==System.Windows.Forms.DialogResult.Yes)
+                {
+                using (StreamWriter sw = File.AppendText("Producao.txt"))
+                    {
+                    sw.WriteLine(@"Use Taboao");
+                    sw.WriteLine("if(select count(funcionario) from Taboao.dbo.Ajuste_Vendaveis where data = '"+teste1+"')=0 ");
+                    sw.WriteLine("Begin");
+                    sw.WriteLine("insert Taboao.dbo.Clientes(Cliente, email, Telefone, Data, Funcionario) VALUES('"+nome+"', '"+email+"', '"+telefone+"', '"+teste1+"', '"+funcionario+"')");
+                    sw.WriteLine("End");
+                    sw.Close();
+                    }
+                MessageBox.Show("Cliente cadastrado com sucesso", "Sucesso", MessageBoxButtons.OK);
+                }
+            tb_nome_completo.Text="";
+            tb_telefone_celular.Text="";
+            tb_email_cliente.Text="";
             }
         }
     }

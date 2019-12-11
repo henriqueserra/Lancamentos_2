@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabFormulario = new System.Windows.Forms.TabControl();
             this.tabProducao = new System.Windows.Forms.TabPage();
+            this.label16 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label_Producao_Vendavel = new System.Windows.Forms.Label();
             this.btn_Producao_ok = new System.Windows.Forms.Button();
@@ -68,10 +69,6 @@
             this.label14 = new System.Windows.Forms.Label();
             this.list_Fidelidade = new System.Windows.Forms.ListBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.listColaboradoras = new System.Windows.Forms.ListBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -82,14 +79,28 @@
             this.label20 = new System.Windows.Forms.Label();
             this.list_bolo_utilizado = new System.Windows.Forms.ListBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.botao_sorteio = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
+            this.tb_email_cliente = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tb_telefone_celular = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.tb_nome_completo = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.listColaboradoras = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabFormulario.SuspendLayout();
             this.tabProducao.SuspendLayout();
             this.tab_Uber.SuspendLayout();
             this.tabFatia.SuspendLayout();
             this.tabPerdas.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabFormulario
@@ -101,11 +112,12 @@
             this.tabFormulario.Controls.Add(this.tabPerdas);
             this.tabFormulario.Controls.Add(this.tabPage1);
             this.tabFormulario.Controls.Add(this.tabPage2);
+            this.tabFormulario.Controls.Add(this.tabPage3);
             this.tabFormulario.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabFormulario.Location = new System.Drawing.Point(0, 129);
             this.tabFormulario.Name = "tabFormulario";
             this.tabFormulario.SelectedIndex = 0;
-            this.tabFormulario.Size = new System.Drawing.Size(875, 378);
+            this.tabFormulario.Size = new System.Drawing.Size(988, 378);
             this.tabFormulario.TabIndex = 0;
             // 
             // tabProducao
@@ -123,10 +135,24 @@
             this.tabProducao.Location = new System.Drawing.Point(4, 35);
             this.tabProducao.Name = "tabProducao";
             this.tabProducao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProducao.Size = new System.Drawing.Size(867, 339);
+            this.tabProducao.Size = new System.Drawing.Size(980, 339);
             this.tabProducao.TabIndex = 0;
             this.tabProducao.Text = "Producao";
             this.tabProducao.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label16.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label16.Location = new System.Drawing.Point(406, 228);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(448, 90);
+            this.label16.TabIndex = 13;
+            this.label16.Text = "Ao registrar produtos como: \r\nBolo de Pote, Bolo Recheado, Bolo Mousse ou Bolo de" +
+    " Festa\r\n\r\nNão esqueça de registrar o bolo base na aba\r\n\"Bolo utilizado\"";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label3
             // 
@@ -229,7 +255,7 @@
             this.tab_Uber.Location = new System.Drawing.Point(4, 35);
             this.tab_Uber.Name = "tab_Uber";
             this.tab_Uber.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_Uber.Size = new System.Drawing.Size(867, 339);
+            this.tab_Uber.Size = new System.Drawing.Size(980, 339);
             this.tab_Uber.TabIndex = 1;
             this.tab_Uber.Text = "Uber Eats";
             this.tab_Uber.UseVisualStyleBackColor = true;
@@ -310,7 +336,7 @@
             this.tabFatia.Location = new System.Drawing.Point(4, 35);
             this.tabFatia.Name = "tabFatia";
             this.tabFatia.Padding = new System.Windows.Forms.Padding(3);
-            this.tabFatia.Size = new System.Drawing.Size(867, 339);
+            this.tabFatia.Size = new System.Drawing.Size(980, 339);
             this.tabFatia.TabIndex = 2;
             this.tabFatia.Text = "Para Fatiar";
             this.tabFatia.UseVisualStyleBackColor = true;
@@ -376,7 +402,7 @@
             this.tabPerdas.Location = new System.Drawing.Point(4, 35);
             this.tabPerdas.Name = "tabPerdas";
             this.tabPerdas.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPerdas.Size = new System.Drawing.Size(867, 339);
+            this.tabPerdas.Size = new System.Drawing.Size(980, 339);
             this.tabPerdas.TabIndex = 3;
             this.tabPerdas.Text = "Vencidos ou Perdas";
             this.tabPerdas.UseVisualStyleBackColor = true;
@@ -456,7 +482,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 35);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(867, 339);
+            this.tabPage1.Size = new System.Drawing.Size(980, 339);
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Fidelidade";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -509,52 +535,6 @@
             this.label15.TabIndex = 17;
             this.label15.Text = "Cadastramento de Bolos entregues por conta de cartão fidelidade";
             // 
-            // listColaboradoras
-            // 
-            this.listColaboradoras.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listColaboradoras.FormattingEnabled = true;
-            this.listColaboradoras.ItemHeight = 16;
-            this.listColaboradoras.Location = new System.Drawing.Point(12, 28);
-            this.listColaboradoras.Name = "listColaboradoras";
-            this.listColaboradoras.Size = new System.Drawing.Size(125, 84);
-            this.listColaboradoras.TabIndex = 0;
-            this.listColaboradoras.SelectedIndexChanged += new System.EventHandler(this.listColaboradoras_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Colaboradora";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(181, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(677, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.label16.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label16.Location = new System.Drawing.Point(406, 228);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(448, 90);
-            this.label16.TabIndex = 13;
-            this.label16.Text = "Ao registrar produtos como: \r\nBolo de Pote, Bolo Recheado, Bolo Mousse ou Bolo de" +
-    " Festa\r\n\r\nNão esqueça de registrar o bolo base na aba\r\n\"Bolo utilizado\"";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.label17);
@@ -569,7 +549,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 35);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(867, 339);
+            this.tabPage2.Size = new System.Drawing.Size(980, 339);
             this.tabPage2.TabIndex = 5;
             this.tabPage2.Text = "Bolo Utiizado";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -664,11 +644,142 @@
     "lo Mousse ou Bolo Festa";
             this.label21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.botao_sorteio);
+            this.tabPage3.Controls.Add(this.label26);
+            this.tabPage3.Controls.Add(this.tb_email_cliente);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.tb_telefone_celular);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.tb_nome_completo);
+            this.tabPage3.Controls.Add(this.label23);
+            this.tabPage3.Controls.Add(this.label22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 35);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(980, 339);
+            this.tabPage3.TabIndex = 6;
+            this.tabPage3.Text = "Sorteio";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // botao_sorteio
+            // 
+            this.botao_sorteio.Location = new System.Drawing.Point(743, 95);
+            this.botao_sorteio.Name = "botao_sorteio";
+            this.botao_sorteio.Size = new System.Drawing.Size(199, 40);
+            this.botao_sorteio.TabIndex = 8;
+            this.botao_sorteio.Text = "Registra Sorteio";
+            this.botao_sorteio.UseVisualStyleBackColor = true;
+            this.botao_sorteio.Click += new System.EventHandler(this.botao_sorteio_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.ForeColor = System.Drawing.Color.Red;
+            this.label26.Location = new System.Drawing.Point(192, 193);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(495, 76);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "É muito importante os dados estarem completos e corretos.\r\n\r\nCada preenchimento v" +
+    "ale por uma compra de\r\nvalor superior a R$ 20,00.";
+            this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tb_email_cliente
+            // 
+            this.tb_email_cliente.Location = new System.Drawing.Point(197, 151);
+            this.tb_email_cliente.Name = "tb_email_cliente";
+            this.tb_email_cliente.Size = new System.Drawing.Size(490, 30);
+            this.tb_email_cliente.TabIndex = 6;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(11, 151);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(180, 23);
+            this.label25.TabIndex = 5;
+            this.label25.Text = "e-mail do Cliente:";
+            // 
+            // tb_telefone_celular
+            // 
+            this.tb_telefone_celular.Location = new System.Drawing.Point(289, 105);
+            this.tb_telefone_celular.Name = "tb_telefone_celular";
+            this.tb_telefone_celular.Size = new System.Drawing.Size(398, 30);
+            this.tb_telefone_celular.TabIndex = 4;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(11, 108);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(272, 23);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Telefone celular do Cliente:";
+            // 
+            // tb_nome_completo
+            // 
+            this.tb_nome_completo.Location = new System.Drawing.Point(222, 63);
+            this.tb_nome_completo.Name = "tb_nome_completo";
+            this.tb_nome_completo.Size = new System.Drawing.Size(465, 30);
+            this.tb_nome_completo.TabIndex = 2;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(11, 66);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(205, 23);
+            this.label23.TabIndex = 1;
+            this.label23.Text = "Nome do(a) Cliente:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(11, 19);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(494, 23);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Cadastramento de clientes para os sorteios da loja";
+            // 
+            // listColaboradoras
+            // 
+            this.listColaboradoras.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listColaboradoras.FormattingEnabled = true;
+            this.listColaboradoras.ItemHeight = 16;
+            this.listColaboradoras.Location = new System.Drawing.Point(12, 28);
+            this.listColaboradoras.Name = "listColaboradoras";
+            this.listColaboradoras.Size = new System.Drawing.Size(125, 84);
+            this.listColaboradoras.TabIndex = 0;
+            this.listColaboradoras.SelectedIndexChanged += new System.EventHandler(this.listColaboradoras_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(119, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Colaboradora";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
+            this.pictureBox1.Location = new System.Drawing.Point(181, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(677, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(874, 508);
+            this.ClientSize = new System.Drawing.Size(988, 508);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listColaboradoras);
@@ -689,9 +800,11 @@
             this.tabPerdas.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -751,6 +864,16 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ListBox list_bolo_utilizado;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox tb_nome_completo;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button botao_sorteio;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox tb_email_cliente;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox tb_telefone_celular;
         }
     }
 
