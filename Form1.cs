@@ -573,6 +573,15 @@ namespace Lancamentos_2
 
             PushResponse response1 = client.PushNote(request1);
             }
+
+        private void tb_email_cliente_TextChanged(object sender, EventArgs e)
+            {
+            if (tb_email_cliente.Text.Contains("@") && tb_email_cliente.Text.Length>7 && tb_nome_completo.Text.Length>10 && tb_telefone_celular.Text.Length >7)
+                {
+                botao_sorteio.Enabled=true;
+                }
+            else { botao_sorteio.Enabled=false; }
+            }
         }
     }
 
