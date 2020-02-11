@@ -20,8 +20,17 @@ namespace Lancamentos_2
             {
             InitializeComponent();
             }
+
         private void Form1_Load(object sender, EventArgs e)
             {
+            this.WindowState=FormWindowState.Maximized;
+            int ajuste_da_tela = 40;
+            int alturaform1 = Height-ajuste_da_tela;
+            int alturatab = tabFormulario.Height;
+            int diferenca_de_alturas = alturaform1-alturatab-tabFormulario.Top;
+            int nova_altura_tab = alturatab+diferenca_de_alturas-ajuste_da_tela;
+            tabFormulario.Height=nova_altura_tab;
+            tabFormulario.Width=Width;
             tabFormulario.Visible=false;
             this.label_Producao_Vendavel.Text="";
             Carrega_Colaboradora();
@@ -31,9 +40,9 @@ namespace Lancamentos_2
             Carrega_Fidelidade();
             Carrega_Bolo_Utilizado();
             }
+
         private void Carrega_Colaboradora()
             {
-
             this.listColaboradoras.Items.Clear();
             this.listColaboradoras.Items.Add("Juliana");
             this.listColaboradoras.Items.Add("Bruna");
@@ -151,7 +160,8 @@ namespace Lancamentos_2
             this.listVendaveis_Producao.Items.Add("CUCA DE ABACAXI");
             this.listVendaveis_Producao.Items.Add("CUCA DE BANANA");
             this.listVendaveis_Producao.Items.Add("CUCA DE MACA");
-                                   }
+            }
+
         private void Carrega_Ubereats()
             {
             list_Ubereats.Items.Clear();
@@ -161,6 +171,7 @@ namespace Lancamentos_2
                 list_Ubereats.Items.Add(linha);
                 }
             }
+
         private void Carrega_Fatiar()
             {
             list_Fatia.Items.Clear();
@@ -170,6 +181,7 @@ namespace Lancamentos_2
                 list_Fatia.Items.Add(linha);
                 }
             }
+
         private void Carrega_Perdas()
             {
             list_Perdas.Items.Clear();
@@ -179,6 +191,7 @@ namespace Lancamentos_2
                 list_Perdas.Items.Add(linha);
                 }
             }
+
         private void Carrega_Fidelidade()
             {
             list_Fidelidade.Items.Clear();
@@ -188,7 +201,8 @@ namespace Lancamentos_2
                 list_Fidelidade.Items.Add(linha);
                 }
             }
-        private void listColaboradoras_SelectedIndexChanged(object sender, EventArgs e)
+
+        private void ListColaboradoras_SelectedIndexChanged(object sender, EventArgs e)
             {
             if (this.listColaboradoras.SelectedIndex>-1)
                 {
@@ -199,10 +213,9 @@ namespace Lancamentos_2
                 {
                 var mensagem = MessageBox.Show("Por favor selecione uma colaboradora válida !", "Seleção errada de colaboradora", MessageBoxButtons.OK);
                 }
-
-
             }
-        private void listVendaveis_Producao_SelectedValueChanged(object sender, EventArgs e)
+
+        private void ListVendaveis_Producao_SelectedValueChanged(object sender, EventArgs e)
             {
             this.label_Producao_Vendavel.Text=this.listVendaveis_Producao.SelectedItem.ToString();
             string vendavel = this.listVendaveis_Producao.SelectedItem.ToString();
@@ -222,7 +235,8 @@ namespace Lancamentos_2
                 label4.Text="Grande";
                 }
             }
-        private void btn_Producao_ok_Click(object sender, EventArgs e)
+
+        private void Btn_Producao_ok_Click(object sender, EventArgs e)
             {
             string colaboradora = this.listColaboradoras.SelectedItem.ToString();
             string vendavel = this.listVendaveis_Producao.SelectedItem.ToString();
@@ -292,14 +306,17 @@ namespace Lancamentos_2
             this.listVendaveis_Producao.SelectedIndex=0;
             Envianotificação("Produção cadastrada");
             }
+
         private void listVendaveis_Producao_SelectedIndexChanged(object sender, EventArgs e)
             {
             this.label_Producao_Vendavel.Text=this.listVendaveis_Producao.SelectedItem.ToString();
             }
+
         private void list_Ubereats_Click(object sender, EventArgs e)
             {
             tb_uber_selecionado.Text=this.list_Ubereats.SelectedItem.ToString();
             }
+
         private void button_uber_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -326,21 +343,25 @@ namespace Lancamentos_2
                     }
                 tb_uber_qtd.Text="";
                 tb_uber_selecionado.Text="";
-                Envianotificação(vendavel + " via Uber Eats");
+                Envianotificação(vendavel+" via Uber Eats");
                 }
             }
+
         private void list_Fatia_Click(object sender, EventArgs e)
             {
             tb_Fatia.Text=this.list_Fatia.SelectedItem.ToString();
             }
+
         private void list_Fatia_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_Fatia.Text=this.list_Fatia.SelectedItem.ToString();
             }
+
         private void list_Ubereats_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_uber_selecionado.Text=this.list_Ubereats.SelectedItem.ToString();
             }
+
         private void button_Fatia_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -370,10 +391,12 @@ namespace Lancamentos_2
                 Envianotificação(vendavel+" colocado para fatiar");
                 }
             }
+
         private void list_Perdas_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_Perdas_Selecionado.Text=list_Perdas.SelectedItem.ToString();
             }
+
         private void botao_Perdas_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -404,6 +427,7 @@ namespace Lancamentos_2
                 Envianotificação("Perda registrada");
                 }
             }
+
         private void botao_fidelidade_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -432,10 +456,12 @@ namespace Lancamentos_2
                 Envianotificação(vendavel+" Entregue via Fidelidade");
                 }
             }
+
         private void list_Fidelidade_SelectedIndexChanged(object sender, EventArgs e)
             {
             tb_fidelidade_selecionado.Text=list_Fidelidade.SelectedItem.ToString();
             }
+
         private void Carrega_Bolo_Utilizado()
             {
             list_bolo_utilizado.Items.Clear();
@@ -446,6 +472,7 @@ namespace Lancamentos_2
                 }
             list_bolo_utilizado.SelectedIndex=0;
             }
+
         private void botao_bolo_utilizado_Click(object sender, EventArgs e)
             {
             string colaboradora = this.listColaboradoras.SelectedItem.ToString();
@@ -504,6 +531,7 @@ namespace Lancamentos_2
             Envianotificação(vendavel+" utilizado");
             MessageBox.Show("Registrado com sucesso!", "Registro", MessageBoxButtons.OK);
             }
+
         private void list_bolo_utilizado_SelectedIndexChanged(object sender, EventArgs e)
             {
             if (list_bolo_utilizado.SelectedIndex==0)
@@ -519,6 +547,7 @@ namespace Lancamentos_2
                 botao_bolo_utilizado.Visible=true;
                 }
             }
+
         private void botao_sorteio_Click(object sender, EventArgs e)
             {
             DateTime data = DateTime.Now;
@@ -559,6 +588,7 @@ namespace Lancamentos_2
             tb_email_cliente.Text="";
             tb_quantidade_de_cupons.Text="1";
             }
+
         private void Envianotificação(string texto)
             {
             PushbulletClient client = new PushbulletClient("o.ijhfmbKRI8JAAAjaorTvs3n1I1oHo4qH");
@@ -576,7 +606,7 @@ namespace Lancamentos_2
 
         private void tb_email_cliente_TextChanged(object sender, EventArgs e)
             {
-            if (tb_email_cliente.Text.Contains("@") && tb_email_cliente.Text.Length>7 && tb_nome_completo.Text.Length>10 && tb_telefone_celular.Text.Length >7)
+            if (tb_email_cliente.Text.Contains("@")&&tb_email_cliente.Text.Length>7&&tb_nome_completo.Text.Length>10&&tb_telefone_celular.Text.Length>7)
                 {
                 botao_sorteio.Enabled=true;
                 }
@@ -584,4 +614,3 @@ namespace Lancamentos_2
             }
         }
     }
-
